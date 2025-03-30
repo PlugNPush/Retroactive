@@ -195,6 +195,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
+    @IBAction func openIssue(_ sender: Any? = nil) {
+        self.safelyOpenURL(AppManager.shared.newIssuePage)
+    }
+
     @IBAction func viewSource(_ sender: Any? = nil) {
         self.safelyOpenURL(AppManager.shared.sourcePage)
     }

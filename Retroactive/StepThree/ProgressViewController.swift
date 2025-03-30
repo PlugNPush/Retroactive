@@ -544,7 +544,7 @@ class ProgressViewController: NSViewController, URLSessionDelegate, URLSessionDa
         }
 
         var bufferLength: UInt64 = 0
-        if let handle = fileHandle {
+        if fileHandle != nil {
             defer {
                 fileHandle?.closeFile()
             }

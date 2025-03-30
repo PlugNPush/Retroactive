@@ -105,7 +105,7 @@ open class CustomButton: NSButton {
 		}
 	}
 
-	@IBInspectable public var shadowColor: NSColor = .controlShadowColor {
+	@IBInspectable public var shadowColor: NSColor = .separatorColor {
 		didSet {
 			needsDisplay = true
 			animateColor()

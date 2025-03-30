@@ -12,8 +12,7 @@ let osAtLeastBigSur = processInfo.isOperatingSystemAtLeast(OperatingSystemVersio
 let osAtLeastMonterey = processInfo.isOperatingSystemAtLeast(OperatingSystemVersion(majorVersion: 12, minorVersion: 0, patchVersion: 0))
 let osAtLeastMontereyE = processInfo.isOperatingSystemAtLeast(OperatingSystemVersion(majorVersion: 12, minorVersion: 3, patchVersion: 0))
 let osAtLeastVentura = processInfo.isOperatingSystemAtLeast(OperatingSystemVersion(majorVersion: 13, minorVersion: 0, patchVersion: 0))
-let osAtLeastSonoma = processInfo.isOperatingSystemAtLeast(OperatingSystemVersion(majorVersion: 14, minorVersion: 0, patchVersion: 0))
-let osAtLeastSequoia = processInfo.isOperatingSystemAtLeast(OperatingSystemVersion(majorVersion: 15, minorVersion: 0, patchVersion: 0))
+let osAtLeast2023 = processInfo.isOperatingSystemAtLeast(OperatingSystemVersion(majorVersion: 14, minorVersion: 0, patchVersion: 0))
 
 let discouraged_osExactlyHighSierra = osMajorVersion == 10 && osMinorVersion == 13
 let discouraged_osExactlyMojave = osMajorVersion == 10 && osMinorVersion == 14
@@ -21,7 +20,6 @@ let discouraged_osExactlyCatalina = osMajorVersion == 10 && osMinorVersion == 15
 let discouraged_osExactlyBigSur = (osMajorVersion == 10 && osMinorVersion == 16) || osMajorVersion == 11
 let discouraged_osExactlyMonterey = osMajorVersion == 12
 let discouraged_osExactlyVentura = osMajorVersion == 13
-let discouraged_osExactlySonoma = osMajorVersion == 14
 let discouraged_osHasExperimentalSupport = false
 
 extension ProcessInfo {
@@ -56,9 +54,6 @@ extension ProcessInfo {
         }
         if (discouraged_osExactlyVentura) {
             return "macOS Ventura"
-        }
-        if (discouraged_osExactlySonoma) {
-            return "macOS Sonoma"
         }
         return ProcessInfo.versionString
     }
